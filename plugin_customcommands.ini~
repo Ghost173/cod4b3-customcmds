@@ -1,0 +1,135 @@
+# This config file allows you to easily define new commands.
+# Read the doc at https://github.com/courgette/b3-plugin-customcommands/
+#
+# Lines starting with a dash (#) will be ignored
+#
+#
+#  ### parameter placeholders
+#
+#  <ARG:FIND_PLAYER:PID> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player's slot id.
+#  <ARG:FIND_PLAYER:GUID> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player's GUID.
+#  <ARG:FIND_PLAYER:PBID> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player's Punkbuster id.
+#  <ARG:FIND_PLAYER:NAME> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player's cleaned up name.
+#  <ARG:FIND_PLAYER:EXACTNAME> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player's exact name.
+#  <ARG:FIND_PLAYER:B3ID> Makes your custom command accept a mandatory parameter which represents a player. The placeholder will be replaced with that player B3 id.
+#
+#  <ARG:FIND_MAP> Makes your custom command accept a mandatory parameter which represents a map. The placeholder will be replaced with the map name.
+#
+#  <ARG> Makes your custom command accept a mandatory parameter parameter. The placeholder will be replaced with that parameter.
+#  <ARG:OPT:{TEXT}> Makes your custom command accept an optional parameter. The placeholder will be replaced with that parameter or if not provided by the content of {TEXT}.
+#
+#  ### other placeholders
+#
+#  <LAST_KILLER:PID> The placeholder will be replaced with the slot id of the player who killed the player calling the command last.
+#  <LAST_KILLER:GUID> The placeholder will be replaced with the GUID of the player who killed the player calling the command last.
+#  <LAST_KILLER:PBID> The placeholder will be replaced with the Punkbuster id of the player who killed the player calling the command last.
+#  <LAST_KILLER:NAME> The placeholder will be replaced with the cleaned up name of the player who killed the player calling the command last.
+#  <LAST_KILLER:EXACTNAME> The placeholder will be replaced with the name of the player who killed the player calling the command last.
+#  <LAST_KILLER:B3ID> The placeholder will be replaced with the B3 id of the player who killed the player calling the command last.
+#
+#  <LAST_VICTIM:PID> The placeholder will be replaced with the slot id of the player who got last killed by the player calling the command.
+#  <LAST_VICTIM:GUID> The placeholder will be replaced with the GUID of the player who got last killed by the player calling the command.
+#  <LAST_VICTIM:PBID> The placeholder will be replaced with the Punkbuster id of the player who got last killed by the player calling the command.
+#  <LAST_VICTIM:NAME> The placeholder will be replaced with the cleaned up name of the player who got last killed by the player calling the command.
+#  <LAST_VICTIM:EXACTNAME> The placeholder will be replaced with the name of the player who got last killed by the player calling the command.
+#  <LAST_VICTIM:B3ID> The placeholder will be replaced with the name of the B3 id who got last killed by the player calling the command.
+#
+#  <PLAYER:PID> The placeholder will be replaced with the slot id of the player calling the command.
+#  <PLAYER:GUID> The placeholder will be replaced with the GUID of the player calling the command.
+#  <PLAYER:PBID> The placeholder will be replaced with the Punkbuster id of the player calling the command.
+#  <PLAYER:NAME> The placeholder will be replaced with the cleaned up name of the player calling the command.
+#  <PLAYER:EXACTNAME> The placeholder will be replaced with the name of the player calling the command.
+#  <PLAYER:B3ID> The placeholder will be replaced with the B3 id of the player calling the command.
+#
+#  <PLAYER:ADMINGROUP_SHORT> The placeholder will be replaced with the identifier of the admin group which the player calling the command belongs to.
+#  <PLAYER:ADMINGROUP_LONG> Gets replaced with the name of the admin group which the player calling the command belongs to.
+#  <PLAYER:ADMINGROUP_LEVEL> Gets replaced with the level of the admin group which the player calling the command belongs to.
+#
+
+[guest commands]
+# define in this section commands that will be available to all players
+afk 		= say ^2<ARG:FIND_PLAYER:NAME> ^7is AFK^2!!!
+ns 			= say ^2<LAST_KILLER:EXACTNAME> ^7nice shot !
+noob 		= say ^2<ARG:FIND_PLAYER:NAME> ^7is the biggest noob of the world
+camper 		= say ^2<ARG:FIND_PLAYER:NAME> ^7noob camper move your ^1BODY^7 man 
+dance 		= say ^2<ARG:FIND_PLAYER:NAME> ^7move your body just ^1DANCE xD
+n1 			= say ^2<PLAYER:NAME> ^7gratz ^2<ARG:FIND_PLAYER:NAME> ^7for this nice kill
+aim 		= say ^2<PLAYER:NAME> ^7turned on his ^1AIM-BOT!
+bye 		= say ^2<PLAYER:NAME>^7 waves his hand to say ^1GOOD BYE. ^7We surely meet later!"
+killed  	= say ^2<PLAYER:NAME> ^7was last killed by ^2<LAST_KILLER:EXACTNAME>
+owned   	= say ^2<PLAYER:NAME> ^7killed ^2<LAST_VICTIM:EXACTNAME> 
+hi 			= say ^2<PLAYER:NAME>^7 waves his hand to say ^1Hi!
+wh  		= say ^2<PLAYER:NAME> ^7thinks that ^2<LAST_KILLER:EXACTNAME> ^7is ^1HACKING!!!
+ns 			= say <LAST_KILLER:EXACTNAME> nice shot !
+fps 		= cmd fb:<PLAYER:PID>
+fov 		= cmd frov:<PLAYER:PID>
+thermal 	= cmd thermal:<PLAYER:PID>
+fh 			= say ^1<ARG:FIND_PLAYER:NAME> ^2is the ^3FATHER ^2of ^1HACKERS^2!!!
+imp 		= say ^2LOL ^1<ARG:FIND_PLAYER:NAME> ^3I am impress from you ^2:D
+thx 		= say ^7<PLAYER:NAME> ^5say thanks to ^7<ARG:FIND_PLAYER:NAME>
+n1 			= say ^7<PLAYER:NAME> ^5gratz ^7<ARG:FIND_PLAYER:NAME> ^5for this nice kill
+death 		= say ^2Hello ^7<PLAYER:NAME>^2, this is ^7Death. ^2Please answer when you're ready.
+bigadmin 	= say ^7<PLAYER:NAME> ^1Ooooooh, ^3Big Admin is watching ^1YOU!
+godmode 	= say ^1GODMODE^2 is now enabled for player ^7<PLAYER:NAME>
+pizza 		= say ^2Someone calls Mario and he brings ^7<PLAYER:NAME>^2 a hot pepperoni pizza!"
+bye 		= say ^7<PLAYER:NAME>^2 waves his hand to say ^1GOOD BYE^2. We surely meet later!"
+killed  	= say ^7<PLAYER:NAME> ^1was last killed by ^7<LAST_KILLER:EXACTNAME>
+owned  	 	= say ^7<PLAYER:NAME> ^1killed ^7<LAST_VICTIM:EXACTNAME> 
+hi 			= say ^7<PLAYER:NAME>^2 waves his hand to say ^1Hi!^2
+wh  		= say ^7<PLAYER:NAME> ^1thinks that ^7<LAST_KILLER:EXACTNAME> ^2is ^1HACKING^3!!!
+fun 		= say ^2Avaliable Messages ^0: ^7n1,thx,noob,death,bigadmin,godmode,pizza,bye,killed,owned,hi,wh,imp,wlc,ns,fh,dance,camper
+[user commands]
+# define in this section commands that will be available to registered players
+
+[regular commands]
+# define in this section commands that will be available to players of the regular group or above
+
+[moderator commands]
+# define in this section commands that will be available to players of the moderator group or above
+
+[admin commands]
+# define in this section commands that will be available to players of the admin group or above
+
+[fulladmin commands]
+# define in this section commands that will be available to players of the fulladmin group or above
+sc = rcon screensay
+[senioradmin commands]
+# define in this section commands that will be available to players of the senioradmin group or above
+
+[superadmin commands]
+# define in this section commands that will be available to players of the superadmin group or above
+
+rain 			= cmd rain:<PLAYER:PID>
+snow			= cmd snow:<PLAYER:PID>
+dropbomb		= cmd dropbomb:<ARG:FIND_PLAYER:PID>
+givebomb		= cmd givebomb:<ARG:FIND_PLAYER:PID>
+returnbomb		= cmd returnbomb:<PLAYER:PID>
+jetpack 		= cmd jetpack:<ARG:FIND_PLAYER:PID>
+spawn			= cmd spawn:<ARG:FIND_PLAYER:PID>
+#aimbot			= cmd aimbot:<ARG:FIND_PLAYER:PID>
+kill			= cmd kill:<ARG:FIND_PLAYER:PID>
+ammo			= cmd ammo:<ARG:FIND_PLAYER:PID>
+wtf				= cmd wtf:<ARG:FIND_PLAYER:PID>
+target			= cmd target:<ARG:FIND_PLAYER:PID>
+bounce			= cmd bounce:<ARG:FIND_PLAYER:PID>
+party			= cmd party:<PLAYER:PID>
+jump			= cmd jump:<PLAYER:PID>
+jumpoff			= cmd jumpoff:<PLAYER:PID>
+flash			= cmd flash:<ARG:FIND_PLAYER:PID>
+save			= cmd save:<PLAYER:PID>
+load			= cmd load:<PLAYER:PID>
+cfgban			= cmd cfgban:<ARG:FIND_PLAYER:PID>
+rpd				= cmd rpd:<ARG:FIND_PLAYER:PID>
+aku				= cmd aku:<ARG:FIND_PLAYER:PID>
+ak				= cmd ak:<ARG:FIND_PLAYER:PID>
+r700			= cmd r700:<ARG:FIND_PLAYER:PID>
+deagle			= cmd deagle:<ARG:FIND_PLAYER:PID>
+pack			= cmd pack:<ARG:FIND_PLAYER:PID>
+knife			= cmd knife:<ARG:FIND_PLAYER:PID>
+
+
+[help]
+# define in this section a short description for each of your command.
+# This description will be shown when a players uses the !help command
+
+
